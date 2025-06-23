@@ -16,7 +16,7 @@ export default function LoginScreen({ navigation }) {
   const handleLogin = async () => {
     try {
       const response = await login(username, password);
-      navigation.navigate("Main");
+      navigation.navigate("AllProducts");
     } catch (error) {
       console.error("Giriş başarısız", error);
       Alert.alert("Hata", "Kullanıcı adı veya şifre hatalı");
@@ -25,7 +25,7 @@ export default function LoginScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>Hoşgeldin</Text>
+      <Text style={styles.heading}>Seni görmek ne güzel!</Text>
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
@@ -83,6 +83,8 @@ const styles = StyleSheet.create({
     fontSize: 40,
     fontFamily: "Montserrat_400Regular",
     color: "#153243",
+    textAlign: "center",
+    width: "85%",
   },
   inputContainer: {
     width: "80%",

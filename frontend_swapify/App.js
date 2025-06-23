@@ -9,10 +9,16 @@ import AppLoading from "expo-app-loading";
 import LoginScreen from "./pages/accounts/LoginScreen";
 import RegisterScreen from "./pages/accounts/RegisterScreen";
 import Main from "./pages/Main";
+import AddProductScreen from "./pages/products/AddProductScreen";
+import AllProductsScreen from "./pages/products/AllProductsScreen";
+import EditProductScreen from "./pages/products/EditProductScreen";
+import MyProductsScreen from "./pages/products/MyProductsScreen";
+import ProductDetailScreen from "./pages/products/ProductDetailScreen";
+import PublicProfileScreen from "./pages/products/PublicProfileScreen";
 import EditProfileScreen from "./pages/profile/EditProfileScreen";
 import MyProfileScreen from "./pages/profile/MyProfileScreen";
+import SettingsScreen from "./pages/SettingsScreen";
 import WelcomeScreen from "./pages/WelcomeScreen";
-import AddProductScreen from "./pages/products/AddProductScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -45,6 +51,16 @@ export default function App() {
         <Stack.Screen name="MyProfile" component={MyProfileScreen} />
         <Stack.Screen name="EditProfile" component={EditProfileScreen} />
         <Stack.Screen name="AddProduct" component={AddProductScreen} />
+        <Stack.Screen name="MyProduct" component={MyProductsScreen} />
+        <Stack.Screen name="ProductDetail" component={ProductDetailScreen} />
+        <Stack.Screen name="EditProduct" component={EditProductScreen} />
+        <Stack.Screen name="AllProducts" component={AllProductsScreen}  />
+        <Stack.Screen name="SettingScreen" component={SettingsScreen} />
+        <Stack.Screen
+          name="PublicProfile"
+          component={PublicProfileScreen}
+          options={({ route }) => ({ title: route.params.username })}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -30,6 +30,10 @@ export async function login(username, password) {
     const response = await api.post("accounts/token/", { username, password });
     const { access, refresh } = response.data;
     await saveTokens(access, refresh);
+
+    // Kullanıcı adını da AsyncStorage'a kaydet
+    await AsyncStorage.setItem("username", username);
+
     return response.data;
   } catch (error) {
     throw error;

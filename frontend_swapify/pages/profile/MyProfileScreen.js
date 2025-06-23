@@ -136,6 +136,24 @@ export default function MyProfileScreen() {
       >
         <Text style={styles.updateButtonText}>Bilgileri Güncelle</Text>
       </Pressable>
+      <Pressable
+        onPress={() => navigation.navigate("MyProduct")}
+        style={({ pressed }) => [
+          styles.updateButton,
+          { opacity: pressed ? 0.7 : 1 },
+        ]}
+      >
+        <Text style={styles.updateButtonText}>Ürünlerim</Text>
+      </Pressable>
+      <Pressable
+        onPress={() => navigation.navigate("AddProduct")}
+        style={({ pressed }) => [
+          styles.updateButton,
+          { opacity: pressed ? 0.7 : 1 },
+        ]}
+      >
+        <Text style={styles.updateButtonText}>Ürün Ekle</Text>
+      </Pressable>
     </View>
   );
 }

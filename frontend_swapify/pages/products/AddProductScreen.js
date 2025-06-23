@@ -23,6 +23,7 @@ const AddProductScreen = ({ navigation }) => {
   const [categoryId, setCategoryId] = useState(null);
   const [categories, setCategories] = useState([]);
   const [images, setImages] = useState([]);
+  const [price, setPrice] = useState("");
 
   useEffect(() => {
     fetchCategories();
@@ -57,7 +58,6 @@ const AddProductScreen = ({ navigation }) => {
       });
 
       if (!result.canceled) {
-        console.log("Seçilen görseller:", result.assets);
         setImages(result.assets);
       }
     } catch (error) {
@@ -76,7 +76,8 @@ const AddProductScreen = ({ navigation }) => {
         title,
         description,
         location,
-        category: categoryId,
+        price,
+        category_id: categoryId,
         is_trade: isTrade,
         is_sale: isSale,
       });
@@ -141,6 +142,15 @@ const AddProductScreen = ({ navigation }) => {
           value={location}
           onChangeText={setLocation}
           returnKeyType="next"
+        />
+
+        <Text style={styles.label}>Fiyat</Text>
+        <TextInput
+          value={price}
+          onChangeText={setPrice}
+          placeholder="Fiyat"
+          keyboardType="numeric"
+          style={styles.input}
         />
 
         <Text style={styles.label}>Kategori</Text>

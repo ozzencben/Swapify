@@ -8,42 +8,6 @@ SECRET_KEY = "django-insecure-n&g9csrwcq-egk&vj$@@0m9if%clnuh-*+pb6qfa-@55^%y#7f
 
 DEBUG = True
 
-# LOGGING = {
-#     "version": 1,
-#     "disable_existing_loggers": False,
-#     "formatters": {
-#         "verbose": {
-#             "format": "{levelname} {asctime} {module} {message}",
-#             "style": "{",
-#         },
-#     },
-#     "handlers": {
-#         "console": {
-#             "class": "logging.StreamHandler",
-#             "formatter": "verbose",
-#         },
-#     },
-#     "loggers": {
-#         "django": {
-#             "handlers": ["console"],
-#             "level": "DEBUG",
-#         },
-#         "django.request": {
-#             "handlers": ["console"],
-#             "level": "DEBUG",
-#             "propagate": False,
-#         },
-#         "django.db.backends": {
-#             "handlers": ["console"],
-#             "level": "DEBUG",  # SQL sorguları görmek için DEBUG
-#         },
-#         "rest_framework": {
-#             "handlers": ["console"],
-#             "level": "DEBUG",
-#         },
-#     },
-# }
-
 
 ALLOWED_HOSTS = [
     "192.168.1.107",
@@ -64,6 +28,7 @@ INSTALLED_APPS = [
     "django_cleanup.apps.CleanupConfig",
     "products.apps.ProductsConfig",
     "django_extensions",
+    "django_filters",
 ]
 
 MIDDLEWARE = [
@@ -82,6 +47,7 @@ REST_FRAMEWORK = {
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
+    "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
 }
 
 CORS_ALLOWED_ORIGINS = [

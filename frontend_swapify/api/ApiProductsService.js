@@ -1,14 +1,16 @@
 import api from "./api";
 
-export const getProducts = async () => {
-  const response = await api.get("products/items/");
+export const getProducts = async (params = {}) => {
+  const response = await api.get("products/items/", { params });
   return response.data;
 };
 
-export const getProduct = async (id) => {
+export const getProductById = async (id) => {
   const response = await api.get(`products/items/${id}/`);
   return response.data;
 };
+
+export const getMyProducts = () => api.get("/products/items/myproducts/");
 
 export const createProduct = async (productData) => {
   const response = await api.post("products/items/", productData);
