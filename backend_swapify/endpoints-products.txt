@@ -1,0 +1,9 @@
+Özet API Endpointler:
+HTTP Metodu	URL	İşlem	Açıklama
+GET	/api/products/	Ürün listele	Tüm ürünleri listeler
+POST	/api/products/	Ürün oluştur	Yeni ürün oluşturur, owner otomatik atanır
+GET	/api/products/{id}/	Ürün detay	Belirli ürünün detaylarını döner
+PUT/PATCH	/api/products/{id}/	Ürün güncelle	Ürünü günceller
+DELETE	/api/products/{id}/	Ürün sil	Ürünü siler
+POST	/api/products/{id}/upload_image/	Ürün görsel yükle	Ürüne resim ekler
+GET	/api/products/categories/	Kategori listele	Tüm kategorileri listeler

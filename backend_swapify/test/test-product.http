@@ -1,0 +1,50 @@
+### Ürün Ekleme
+POST http://localhost:8000/api/products/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjcxNjYzLCJpYXQiOjE3NTA2NjY4NjMsImp0aSI6ImUxOTBhOWQwZGU5ZjQyY2RiYTIxN2I2OWM4MDAyMzE5IiwidXNlcl9pZCI6M30.nlDM-XcL5eDvTm37Btlt-Sz5WtHoKI30psCiiOJ4Ugw
+Content-Type: application/json
+
+{
+  "title": "Macbook Pro 2020",
+  "description": "Çok iyi durumda, takas ve satışa uygun.",
+  "category": 1,
+  "is_trade": true,
+  "is_sale": true,
+  "location": "İstanbul"
+}
+
+###
+
+### Ürün Listeleme
+GET http://localhost:8000/api/products/
+Accept: application/json
+
+###
+
+### Kategori Listeleme
+GET http://localhost:8000/api/products/categories/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjc0MDcxLCJpYXQiOjE3NTA2NjkyNzEsImp0aSI6ImMxZjU2YzYyYmIxOTQyZWI4OGI2YTlhN2E0MzgyZjJiIiwidXNlcl9pZCI6M30.Lrod4uTmDKxz701PEYP71-rkt1fAwDoHZ9xkhcz0lRs
+Accept: application/json
+
+
+###
+
+### Görsel Yükleme
+# Burada 2 olan product_id'yi eklediğin ürüne göre değiştir
+# image dosya yolu mutlaka kendi sistemine göre tam yazılmalı.
+POST http://localhost:8000/api/products/2/upload_image/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjcxNjYzLCJpYXQiOjE3NTA2NjY4NjMsImp0aSI6ImUxOTBhOWQwZGU5ZjQyY2RiYTIxN2I2OWM4MDAyMzE5IiwidXNlcl9pZCI6M30.nlDM-XcL5eDvTm37Btlt-Sz5WtHoKI30psCiiOJ4Ugw
+
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename="ea005ef310114579acf4f32079cd2e80.jpeg"
+Content-Type: image/jpeg
+
+< ./C:/Users/ozzenc/Desktop/Swapify App güncel/backend_swapify/media/profile_images/user_3/ea005ef310114579acf4f32079cd2e80.jpeg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+
+
+
+###

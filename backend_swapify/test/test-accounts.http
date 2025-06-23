@@ -1,0 +1,45 @@
+### Kullanıcı Kaydı (Register)
+POST http://127.0.0.1:8000/api/accounts/register/
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "first_name": "Ali",
+  "last_name": "Veli",
+  "email": "test@example.com",
+  "password": "123456test",
+  "password_again": "123456test"
+}
+
+### Giriş Yap (Token al)
+POST http://127.0.0.1:8000/api/accounts/token/
+Content-Type: application/json
+
+{
+  "username": "ozzenc",
+  "password": "Ozenc12."
+}
+
+### Access Token Yenile (Refresh)
+POST http://127.0.0.1:8000/api/accounts/token/refresh/
+Content-Type: application/json
+
+{
+  "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MzE5NTUwOSwiaWF0IjoxNzUwNjAzNTA5LCJqdGkiOiJiYTA3NTVjNmE4NTI0ZjM1YjEyYWVkZjI0N2NmZDY2NiIsInVzZXJfaWQiOjF9.QErouCsphPoHGWO1HL3ni7hrP4AE68tZm7mjayTHF84"
+}
+
+### Token Doğrula (Verify)
+POST http://127.0.0.1:8000/api/accounts/token/verify/
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjA4MzU0LCJpYXQiOjE3NTA2MDM1MDksImp0aSI6IjMwYjAwMjE0NWIxNTRmYmE4OGEyNTMwNjJkYzk1MzlhIiwidXNlcl9pZCI6MX0.nc6Qfw1kQCzLtRYmBmS4B1vRY5CwIMDWUgCXZZOLEd0"
+}
+
+### password reset
+POST http://localhost:8000/api/accounts/password_reset/
+Content-Type: application/json
+
+{
+  "email": "donmezerevrim@gmail.com"
+}
