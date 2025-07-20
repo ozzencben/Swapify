@@ -1,0 +1,27 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+
+# OS dosyaları
+.DS_Store
+Thumbs.db
+
+# Build dosyaları
+dist/
+build/
+
+# Expo dosyaları
+.expo/
+
+# Diğer IDE ve editör dosyaları
+.vscode/
+.idea/
